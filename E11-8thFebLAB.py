@@ -31,8 +31,7 @@ writer.writerow(meta_data)
 while unix<timer:
     time.sleep(1)
     unix = int( time.time())
-    t = time.localtime()
-    print(t)
+    print(time.time())
     try:
         aqdata = pm25.read()
         print(aqdata)
