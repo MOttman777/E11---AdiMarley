@@ -4,6 +4,8 @@ import busio
 from digitalio import DigitalInOut, Direction, Pull
 from adafruit_pm25.i2c import PM25_I2C
 
+unix = int(time.time())
+timer = unix + 30
 
 reset_pin = None
 
@@ -20,14 +22,14 @@ pm25 = PM25_UART(uart, reset_pin)
 #pm25 = PM25_I2C(i2c, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
-unix = int(time.time())
-timer = unix + 30
 
 while unix<timer:
     time.sleep(1)
+    unix = int( time.time())
     try:
         aqdata = pm25.read()
         print(aqdata)
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
+    
