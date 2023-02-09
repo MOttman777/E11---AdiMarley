@@ -6,10 +6,6 @@ from adafruit_pm25.i2c import PM25_I2C
 
 
 reset_pin = None
-#If you have a GPIO, its not a bad idea to connect it to the RESET pin
-reset_pin = DigitalInOut(board.G0)
-reset_pin.direction = Direction.OUTPUT
-reset_pin.value = False
 
 import serial
 uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.25)
