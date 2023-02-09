@@ -20,10 +20,11 @@ pm25 = PM25_UART(uart, reset_pin)
 #pm25 = PM25_I2C(i2c, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
+unix = int(time.time())
+timer = unix + 30
 
-while True:
+while unix<timer:
     time.sleep(1)
-
     try:
         aqdata = pm25.read()
         print(aqdata)
