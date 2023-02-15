@@ -10,15 +10,16 @@ writer = csv.writer(f)
 writer.writerow(meta_data)
 print(sys.argv)
 
-unix = int(time.time())
-timer = unix + 30
+start_time = int(time.time())
+run_time = int(sys.argv[1])
+itime = start_time
 
-while unix < timer:
-    unix = int(time.time())
+while itime < (start_time + run_time):
+    itime = int(time.time())
     idata = random.random()
-    print(unix,idata)
+    print(itime,idata)
     time.sleep(1)
-    data = [unix,idata]
+    data = [itime,idata]
     writer.writerow(data)
 
-f.close()
+    
