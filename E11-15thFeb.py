@@ -3,6 +3,11 @@ import random
 import time
 import argparse
 
+import csv
+meta_data = ["Time","Random"]
+f = open("random_data.csv","w",newline = '')
+writer = csv.writer(f)
+writer.writerow(meta_data)
 print(sys.argv)
 
 start_time = time.time()
@@ -14,5 +19,7 @@ while itime < (start_time + run_time):
     idata = random.random()
     print(itime,idata)
     time.sleep(1)
+    data = [itime,idata]
+    writer.writerow(data)
 
-    
+f.close()
