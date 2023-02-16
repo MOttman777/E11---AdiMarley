@@ -27,7 +27,7 @@ pm25 = PM25_UART(uart, reset_pin)
 
 import csv
 meta_data = ["Time","PM10 std","PM25 std","PM 100 std","Temperature","Gas","Pressure","Altitude","Relative Humidity"]
-f = open("random_data.csv","w",newline = '')
+f = open("sensor_data.csv","w",newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 print(sys.argv)
