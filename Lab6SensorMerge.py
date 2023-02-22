@@ -26,7 +26,7 @@ from adafruit_pm25.uart import PM25_UART
 pm25 = PM25_UART(uart, reset_pin)
 
 ##sleep
-time.sleep(240)
+time.sleep(150)
 
 import csv
 meta_data = ["Time","PM10 std","PM25 std","PM 100 std","Temperature","Gas","Pressure","Altitude","Relative Humidity"]
