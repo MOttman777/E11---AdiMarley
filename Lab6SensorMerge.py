@@ -25,6 +25,9 @@ uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.95)
 from adafruit_pm25.uart import PM25_UART
 pm25 = PM25_UART(uart, reset_pin)
 
+##sleep
+time.sleep(150)
+
 import csv
 meta_data = ["Time","PM10 std","PM25 std","PM 100 std","Temperature","Gas","Pressure","Altitude","Relative Humidity"]
 f = open(str(sys.argv[2]),"w",newline = '')
