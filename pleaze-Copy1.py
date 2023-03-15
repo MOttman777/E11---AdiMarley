@@ -7,6 +7,7 @@
 import RPi.GPIO as GPIO
 import time
 import datetime
+import csv
 
 #GPIO pin set up
 GPIO.setmode(GPIO.BCM)
@@ -24,11 +25,17 @@ def count_pulse(channel):
 # callback function
 GPIO.add_event_detect(26, GPIO.FALLING, callback=count_pulse)
 
+meta_data = ["Time","Count"]
+f = open("radiation_count.csv","w",newline = '')
+writer = csv.writer(f)
+writer.writerow(meta_data)
+
 while True:
     try:
         count = 0
         time.sleep(60)
         print("Counts this minute:", count)
+        data = [time.time(),count]
     except KeyboardInterrupt:
         # Clean up GPIO 
         GPIO.cleanup()
