@@ -36,7 +36,10 @@ while True:
         time.sleep(60)
         print("Counts this minute:", count)
         data = [time.time(),count]
+        writer.writerow(data)
     except KeyboardInterrupt:
         # Clean up GPIO 
         GPIO.cleanup()
+
+f.close()
 
