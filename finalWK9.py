@@ -8,6 +8,7 @@ import RPi.GPIO as GPIO
 import time
 import datetime
 import csv
+import sys
 import argparse
 
 rtime = int(sys.argv[1])
