@@ -13,6 +13,7 @@ import argparse
 
 rtime = int(sys.argv[1])
 curtime = int(time.time())
+ctime = int(time.time())
 
 #GPIO pin set up
 GPIO.setmode(GPIO.BCM)
