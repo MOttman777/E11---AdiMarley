@@ -37,7 +37,7 @@ while itime < (start_time + run_time):
     print("%f %f %f"%accelerometer.acceleration)
     itime = int(time.time())
     try:
-        accdata = accel.read()
+        accdata = accelerometer.read()  #changed 'accel.read()' to 'accelerometer.read()'
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
