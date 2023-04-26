@@ -16,6 +16,8 @@ import sys
 
 # In[ ]:
 
+##CHANGELOG:
+#changed 'accel.read()' to 'accelerometer.read()'
 
 i2c = busio.I2C(board.SCL, board.SDA)
 #i2c = board.I2C()
@@ -37,7 +39,7 @@ while itime < (start_time + run_time):
     print("%f %f %f"%accelerometer.acceleration)
     itime = int(time.time())
     try:
-        accdata = accelerometer.read()  #changed 'accel.read()' to 'accelerometer.read()'
+        accdata = accelerometer.read()
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
@@ -45,4 +47,3 @@ while itime < (start_time + run_time):
     writer.writerow(data)
 f.close() 
 time.sleep(1)
-
