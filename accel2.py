@@ -19,6 +19,7 @@ import argparse
 
 i2c = busio.I2C(board.SCL, board.SDA)
 #i2c = board.I2C()
+int1 = digitalio.DigitalInOut(board.D6)  # Set this to the correct pin for the interrupt!
 #accelerometer = adafruit_adxl34x.ADXL345(i2c)
 accelerometer = adafruit_lis3dh.LIS3DH_I2C(i2c, int1=int1)
 
