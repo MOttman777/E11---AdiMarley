@@ -12,7 +12,7 @@ import digitalio
 import adafruit_lis3dh
 import time
 import argparse
-
+import sys
 
 # In[ ]:
 
