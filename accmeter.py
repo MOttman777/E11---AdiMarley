@@ -29,4 +29,4 @@ while itime < (start_time + run_time):
     data = [accdata[0],accdata[1],accdata[2]]
     writer.writerow(data)
 f.close() 
-    time.sleep(1)
+time.sleep(1)
