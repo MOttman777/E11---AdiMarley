@@ -1,4 +1,4 @@
-Time(s),Velocity(m/s),Acceleration(m/s/s)
+t,v,result
 0,0,0
 5,2.24,0.44704
 10,8.05,1.62
